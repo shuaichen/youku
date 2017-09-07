@@ -66,20 +66,16 @@ def  unittest():
     deserializer.update(pktBytes)
     for packet in deserializer.nextPackets():
         print("got a packet!")
-        if packet == packet1: 
-        print("It’s packet 1!")
-        elif packet == packet2: 
-        print("It’s packet 2!")
-        elif packet == packet3: 
-        print("It’s packet 3!") 
-        elif pakcet == packet4: 
-        print("It’s packet 4!")
+        if packet == packet1: print("It’s packet 1!")
+        elif packet == packet2: print("It’s packet 2!")
+        elif packet == packet3: print("It’s packet 3!") 
+        elif pakcet == packet4: print("It’s packet 4!")
 
 
-def main()
+def main():
     unittest()
 
-if __name__ = "_main_"
+if __name__ == "__main__":
     main()
 
 
