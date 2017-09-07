@@ -27,7 +27,7 @@ class Result(PacketType):
           DEFINITION_VERSION = “1.0”
           FIELDS = [
                (“id”,UINT32),
-               (“result”,SRTING),
+               (“result”,BOOL),
                ]
 
 def  unittest()
@@ -57,7 +57,7 @@ def  unittest()
     packet4=Result()
     packetBytes = packet4._serialize_()
     packet4.id=1
-    packet4.result="fail"
+    packet4.result=true
     packet4x = PacketType.Deserialize(packetBytes)
     if packet4x == packet4:
           print(“These two packets of fourth packet are the same!”)
@@ -68,9 +68,9 @@ def  unittest()
     for packet in deserializer.nextPackets():
         print(“got a packet!”)
               if packet == packet1: print(“It’s packet 1!”)
-              elif packet == packet2: print(It’s packet 2!”)
+              elif packet == packet2: print(“It’s packet 2!”)
               elif packet == packet3: print(“It’s packet 3!”) 
-              elif pakcet == packet4: print("It's packet 4!")
+              elif pakcet == packet4: print(“It’s packet 4!”)
 
 
 def main()
