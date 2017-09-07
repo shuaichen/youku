@@ -32,13 +32,13 @@ class Result(PacketType):
 def  unittest():
  
     packet1=RequestPicture()
-    packetBytes = packet1._serialize_()
+    packetBytes = packet1.__serialize__()
     packet1x = PacketType.Deserialize(packetBytes)
-    if packet1x == packet2:
-    	print("These two packets of first packet are the same!")
+    if packet1x == packet1:
+        print("These two packets of first packet are the same!")
 
     packet2=Picture()
-    packetBytes = packet2._serialize_()
+    packetBytes = packet2.__serialize__()
     packet2.id=1
     packet2.picture="1.png"
     packet2x = PacketType.Deserialize(packetBytes)
@@ -46,7 +46,7 @@ def  unittest():
         print("These two packets of second packet are the same!")
 
     packet3=Answer()
-    packetBytes = packet3._serialize_()
+    packetBytes = packet3.__serialize__()
     packet3.id=1
     packet3.answer=1234
     packet3x = PacketType.Deserialize(packetBytes)
@@ -54,15 +54,15 @@ def  unittest():
         print("These two packets of third packet are the same!")
 
     packet4=Result()
-    packetBytes = packet4._serialize_()
+    packetBytes = packet4.__serialize__()
     packet4.id=1
-    packet4.result=true
+    packet4.result=True
     packet4x = PacketType.Deserialize(packetBytes)
     if packet4x == packet4:
         print("These two packets of fourth packet are the same!")
 
     deserializer = PacketType.Deserializer()
-    pktBytes = packet1._serialize_() + packet2._serialize_() + packet3._serialize_() + packet4._serialize_()
+    pktBytes = packet1.__serialize__() + packet2.__serialize__() + packet3.__serialize__() + packet4.__serialize__()
     deserializer.update(pktBytes)
     for packet in deserializer.nextPackets():
         print("got a packet!")
@@ -79,8 +79,11 @@ def  unittest():
 def main()
     unittest()
 
-if _name_ = "_main_"
+if __name__ = "_main_"
     main()
+
+
+
 
 
 
