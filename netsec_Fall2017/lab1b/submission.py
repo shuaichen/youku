@@ -18,7 +18,7 @@ class Answer(PacketType):
     DEFINITION_VERSION = "1.0"
     FIELDS = [
       ("id",UINT32),
-      ("answer",UINT32),
+      ("answer",UINT32)
     ]
 
 class Result(PacketType):
@@ -26,7 +26,7 @@ class Result(PacketType):
     DEFINITION_VERSION = "1.0"
     FIELDS = [
       ("id",UINT32),
-      ("result",BOOL),
+      ("result",BOOL)
     ]
 
 def  unittest():
@@ -38,26 +38,26 @@ def  unittest():
         print("These two packets of first packet are the same!")
 
     packet2=Picture()
-    packetBytes = packet2.__serialize__()
+    packet2Bytes = packet2.__serialize__()
     packet2.id=1
     packet2.picture=b"1.png"
-    packet2x = PacketType.Deserialize(packetBytes)
+    packet2x = PacketType.Deserialize(packet2Bytes)
     if packet2x == packet2:
         print("These two packets of second packet are the same!")
 
     packet3=Answer()
-    packetBytes = packet3.__serialize__()
+    packet3Bytes = packet3.__serialize__()
     packet3.id=1
     packet3.answer=1234
-    packet3x = PacketType.Deserialize(packetBytes)
+    packet3x = PacketType.Deserialize(packet3Bytes)
     if packet3x == packet3:
         print("These two packets of third packet are the same!")
 
     packet4=Result()
-    packetBytes = packet4.__serialize__()
+    packet4Bytes = packet4.__serialize__()
     packet4.id=1
     packet4.result=True
-    packet4x = PacketType.Deserialize(packetBytes)
+    packet4x = PacketType.Deserialize(packet4Bytes)
     if packet4x == packet4:
         print("These two packets of fourth packet are the same!")
 
