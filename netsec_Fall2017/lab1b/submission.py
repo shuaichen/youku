@@ -2,7 +2,7 @@ from playground.network.packet import PacketType
 from playground.network.packet.fieldtypes import UINT32,STRING,BUFFER,BOOL
 
 class RequestPicture(PacketType):
-    DEFINITION_IDENTIFIER = "lab1b.shuaichenwu.RequestPicure"
+    DEFINITION_IDENTIFIER = "lab1b.shuaichenwu.RequestPicture"
     DEFINITION_VERSION = "1.0"
     FIELDS = []
 
