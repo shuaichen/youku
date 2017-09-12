@@ -34,7 +34,7 @@ def  unittest():
     packet1=RequestPicture()
     packetBytes = packet1.__serialize__()
     packet1x = PacketType.Deserialize(packetBytes)
-    assert packet1x == packet1:
+    assert packet1x == packet1
        
 
     packet2=Picture()
@@ -42,7 +42,7 @@ def  unittest():
     packet2.id=1
     packet2.picture=b"1.png"
     packet2x = PacketType.Deserialize(packet2Bytes)
-    assert packet2x == packet2:
+    assert packet2x == packet2
        
 
     packet3=Answer()
@@ -50,7 +50,7 @@ def  unittest():
     packet3.id=1
     packet3.answer=1234
     packet3x = PacketType.Deserialize(packet3Bytes)
-    assert packet3x == packet3:
+    assert packet3x == packet3
         
 
     packet4=Result()
@@ -58,7 +58,7 @@ def  unittest():
     packet4.id=1
     packet4.result=True
     packet4x = PacketType.Deserialize(packet4Bytes)
-    assert packet4x == packet4:
+    assert packet4x == packet4
        
 
     deserializer = PacketType.Deserializer()
