@@ -40,7 +40,7 @@ def  unittest():
     packet2=Picture()
     packet2Bytes = packet2.__serialize__()
     packet2.id=1
-    packet2.picture=b"1.png"
+    packet2.picture=b'1.png'
     packet2x = PacketType.Deserialize(packet2Bytes)
     if packet2x == packet2:
         print("These two packets of second packet are the same!")
