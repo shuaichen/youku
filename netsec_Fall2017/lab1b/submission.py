@@ -34,32 +34,32 @@ def  unittest():
     packet1=RequestPicture()
     packetBytes = packet1.__serialize__()
     packet1x = PacketType.Deserialize(packetBytes)
-    if packet1x == packet1:
-        print("These two packets of first packet are the same!")
+    assert packet1x == packet1:
+       
 
     packet2=Picture()
     packet2Bytes = packet2.__serialize__()
     packet2.id=1
     packet2.picture=b"1.png"
     packet2x = PacketType.Deserialize(packet2Bytes)
-    if packet2x == packet2:
-        print("These two packets of second packet are the same!")
+    assert packet2x == packet2:
+       
 
     packet3=Answer()
     packet3Bytes = packet3.__serialize__()
     packet3.id=1
     packet3.answer=1234
     packet3x = PacketType.Deserialize(packet3Bytes)
-    if packet3x == packet3:
-        print("These two packets of third packet are the same!")
+    assert packet3x == packet3:
+        
 
     packet4=Result()
     packet4Bytes = packet4.__serialize__()
     packet4.id=1
     packet4.result=True
     packet4x = PacketType.Deserialize(packet4Bytes)
-    if packet4x == packet4:
-        print("These two packets of fourth packet are the same!")
+    assert packet4x == packet4:
+       
 
     deserializer = PacketType.Deserializer()
     pktBytes = packet1.__serialize__() + packet2.__serialize__() + packet3.__serialize__() + packet4.__serialize__()
