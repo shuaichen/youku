@@ -4,7 +4,9 @@ from playground.network.packet.fieldtypes import UINT32,STRING,BUFFER,BOOL
 class RequestPicture(PacketType):
     DEFINITION_IDENTIFIER = "lab1b.shuaichenwu.RequestPicture"
     DEFINITION_VERSION = "1.0"
-    FIELDS = []
+    FIELDS = [
+        ("id",UNIT32)
+    ]
 
 class Picture(PacketType):
     DEFINITION_IDENTIFIER = "lab1b.shuaichenwu.Picture"
